@@ -16,6 +16,8 @@ class OrderItem extends Model
         'price',
         'tax',
         'total_price',
+        'created_at',
+        'updated_at',
     ];
 
     protected $dates = ['deleted_at'];

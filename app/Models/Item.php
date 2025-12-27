@@ -18,6 +18,8 @@ class Item extends Model
         'category_id',
         'img',
         'is_active',
+        'created_at',
+        'updated_at',
     ];
 
     protected $dates = ['deleted_at'];
