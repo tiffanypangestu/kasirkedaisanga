@@ -1,5 +1,6 @@
 <?php
 
+/** @var \Tests\TestCase $this */
 test('the application returns a successful response', function () {
     $response = $this->get('/');
 
