@@ -9,20 +9,21 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ItemFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word(),
-            'description' => $this->faker->sentence(),
+            'name' => $this->faker->name(),
+            'description' => $this->faker->text(),
             'price' => $this->faker->numberBetween(1000, 100000),
-            'category_id' => \App\Models\Category::factory(),
-            'img' => null,
-            'is_active' => true,
+            'category_id' => $this->faker->numberBetween(1, 2),
+            'img' => fake()->randomElement([
+                'https://plus.unsplash.com/premium_photo-1668146927669-f2edf6e86f6f',
+                'https://images.unsplash.com/photo-1611518040286-9af8ba97ab46?q',
+                'https://images.unsplash.com/photo-1614563637806-1d0e645e0940?q',
+                'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?q',
+                'https://plus.unsplash.com/premium_photo-1694547924505-caf71944b4df?q',
+            ]),
+            'is_active' => $this->faker->boolean(),
         ];
     }
 }
